@@ -1,8 +1,44 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightyellow;
 }
 
 a {
   color: #00B7FF;
+}
+
+ul.tasks {
+  list-style-type: none;
+  max-width: 500px;;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 8px;
+  font-size: 120%;
+  border: solid 1px lightgray;
+  border-radius: 0.6em;
+  background-color: white;
+  box-shadow: lightgray 4px 4px;
+}
+
+.tasks li {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  border-bottom: dotted lightgray 1px;
+}
+
+.newtask {
+  padding: 1em;
+  max-width: 500px;
+}
+
+.newtask form {
+  display: grid;
+  grid-template-columns: 1fr 4em;
+}
+
+.newtask input,
+.newtask button {
+  font-size: 140%;
 }

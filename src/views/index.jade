@@ -2,6 +2,30 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  p ようこそ docker-nodejsへ！
   p 現在の日時は #{currentTime} です。
+
+  h2 Tasks
+  ul.tasks
+    each t in tasks
+      li
+        form(action="update", method="post")
+          input(type='hidden' name='id' value=t.id)
+          input(
+            type='checkbox'
+            name='done'
+            checked=t.done
+            onclick="this.closest('form').submit();"
+          )
+
+        span.task= t.task
+
+        form(action="delete", method="post")
+          input(type='hidden' name='id' value=t.id)
+          button.delete X
+
+  div.newtask
+    form(action="create", method="post")
+      input(type='text' name='task')
+      button(type='submit') Add
+
+  //- pre #{JSON.stringify(tasks, null, 2)}
