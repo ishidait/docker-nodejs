@@ -1,8 +1,23 @@
 version: '3.7'
 services:
+  mysql:
+    image: mysql:5.7
+    env_file: ./mysql/mysql.env
+    environment:
+      - TZ=Asia/Tokyo
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql/conf:/etc/mysql/conf.d/:ro
+      - ./mysql/data:/var/lib/mysql
+    networks:
+      - backend
+
   app:
     image: node:12
+    env_file: ./app.env
     environment:
+      - TZ=Asia/Tokyo
       - DEBUG=app:*
     tty: true
     ports:
@@ -11,3 +26,10 @@ services:
       - ./src:/app
     working_dir: /app
     command: npm run dev
+    networks:
+      - backend
+    depends_on:
+      - mysql
+
+networks:
+  backend:
