@@ -4,15 +4,13 @@ const db = require('../models');
 
 router.get('/', async function(req, res) {
   const tasks = await db.Task.findAll();
-
-  const currentTime = new Date();
-  res.render('index', { title: 'Docker-Node.js', currentTime, tasks });
+  res.render('index', { title: 'Docker-Node.js', tasks });
 });
 
 router.post('/create', async function(req, res) {
   const newTask = db.Task.build({
     task: req.body.task,
-    done: false
+    done: false,
   });
   await newTask.save();
 
@@ -22,7 +20,7 @@ router.post('/create', async function(req, res) {
 router.post('/update', async function(req, res) {
   const task = await db.Task.findByPk(req.body.id);
   if (task) {
-    task.done = !!(req.body.done);
+    task.done = !!req.body.done;
     await task.save();
   }
 
@@ -37,6 +35,5 @@ router.post('/delete', async function(req, res) {
 
   res.redirect('/');
 });
-
 
 module.exports = router;
