@@ -3,3 +3,5 @@ npm-debug.log
 
 *.env
 mysql/data/
+
+.DS_Store
