@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./bin/www",
-    "start": "node ./bin/www",
-    "heroku-postbuild": "npm i --prefix=src && mv src/node_modules /"
+    "start": "node ./bin/www"
   },
   "engines": {
     "node": "12.x"
