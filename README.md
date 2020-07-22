@@ -6,7 +6,7 @@ https://ishida-it.com/blog/post/2019-11-21-docker-nodejs/
 
 ## (2) VS Codeのリモート拡張機能を使う
 
-https://ishida-it.com/blog/post/2019-11-22-docker-nodejs/
+https://ishida-it.com/blog/post/2019-11-22-docker-nodejs-vscode/
 
 
 ## (3) MySQL用コンテナを追加
