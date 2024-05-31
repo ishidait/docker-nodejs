@@ -16,7 +16,7 @@
     "http-errors": "1.8.0",
     "morgan": "1.10.0",
     "mysql2": "3.9.8",
-    "pug": "3.0.2",
+    "pug": "3.0.3",
     "sequelize": "6.29.0",
     "sequelize-cli": "6.2.0"
   },
