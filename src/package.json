@@ -15,7 +15,7 @@
     "express": "4.22.2",
     "http-errors": "1.8.0",
     "morgan": "1.11.0",
-    "mysql2": "3.9.8",
+    "mysql2": "3.22.0",
     "pug": "3.0.3",
     "sequelize": "6.37.8",
     "sequelize-cli": "6.2.0"
